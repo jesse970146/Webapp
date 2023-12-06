@@ -1,6 +1,6 @@
 #設定app一些參數的地方
 import os
-
+from flask_cors import CORS
 from flask import Flask,jsonify
 from flask_smorest import Api
 from dotenv import load_dotenv
@@ -10,14 +10,14 @@ from resources.book import blp as BookBlueprint
 from resources.page import blp as PageBlueprint
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
-
+from flask import C
 from db import db
 import models
 from models import BlockListModel
 
 def create_app(db_url=None):
     app = Flask(__name__)
-
+    CORS(app)
     load_dotenv()
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "WebAPP API"
