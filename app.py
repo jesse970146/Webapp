@@ -10,7 +10,6 @@ from resources.book import blp as BookBlueprint
 from resources.page import blp as PageBlueprint
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
-from flask import C
 from db import db
 import models
 from models import BlockListModel
