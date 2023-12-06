@@ -26,6 +26,8 @@ class PlainBookSchema(Schema):
 
 class PageUpdateSchema(Schema):
     text = fields.Str(required = True)
+    image_url = fields.Str(required = True)
+
 
 
 class PageSchema(PlainPageSchema):

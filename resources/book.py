@@ -38,6 +38,13 @@ class BookInUser(MethodView):
             db.session.commit()
         except SQLAlchemyError as e:
             abort(500, message = str(e))
+        for i in range (1,9):
+            page = PageModel( book_id = Book.id, user_id = user_id, page_number = i, text = f"This is page {i}", image_url = f"imageurl{i}")
+            try:
+                db.session.add(page)
+                db.session.commit()
+            except SQLAlchemyError:
+                abort(500, message = "An error occurred while inserting the page.")
         return Book
     
 @blp.route("/book/<int:book_id>")

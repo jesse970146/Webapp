@@ -17,26 +17,26 @@ class Pagelist(MethodView):
     def get(self):
         return PageModel.query.all()
     
-    @jwt_required()
-    @blp.arguments(PageSchema)
-    @blp.response(201, PageSchema)
-    def post(self, page_data):
-        user_id= get_jwt_identity()  
-        Book = BookModel.query.get_or_404(page_data["book_id"])
-        for i in Book.pages:
-            if i.page_number == page_data["page_number"]:
-                return abort(409, message= "A page with that page number has exists.")
+    # @jwt_required()
+    # @blp.arguments(PageSchema)
+    # @blp.response(201, PageSchema)
+    # def post(self, page_data):
+    #     user_id= get_jwt_identity()  
+    #     Book = BookModel.query.get_or_404(page_data["book_id"])
+    #     for i in Book.pages:
+    #         if i.page_number == page_data["page_number"]:
+    #             return abort(409, message= "A page with that page number has exists.")
         
-        if Book:
-            page = PageModel( **page_data, user_id = user_id)
-            try:
-                db.session.add(page)
-                db.session.commit()
-            except SQLAlchemyError:
-                abort(500, message = "An error occurred while inserting the page.")
-            return page
-        else:
-            abort(409, message= "A book with that book name didn't exists.")
+    #     if Book:
+    #         page = PageModel( **page_data, user_id = user_id)
+    #         try:
+    #             db.session.add(page)
+    #             db.session.commit()
+    #         except SQLAlchemyError:
+    #             abort(500, message = "An error occurred while inserting the page.")
+    #         return page
+    #     else:
+    #         abort(409, message= "A book with that book name didn't exists.")
     
 @blp.route("/page/<int:page_id>")
 class Page(MethodView):
@@ -78,6 +78,7 @@ class Page(MethodView):
               )
         if Page:
             Page.text = page_data["text"]
+            Page.image_url = page_data["image_url"]
         db.session.add(Page)
         db.session.commit()
         return Page
