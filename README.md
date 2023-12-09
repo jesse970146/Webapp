@@ -3,9 +3,9 @@
 
 ## API_URL :　https://web-app-backend-r3ac.onrender.com
 
+## 用戶登入部分
 
-
-## POST   /register 創帳號
+### POST   /register 創帳號
 提供username與password
 ```json
 {
@@ -28,7 +28,7 @@ Error Response 使用者名稱重複
 }
 ```
 
-## POST   /login 登入
+### POST   /login 登入
 提供username與password
 ```json
 {
@@ -58,7 +58,7 @@ Error Response 登入失敗
 }
 ```
 
-## POST   /logout 登出
+### POST   /logout 登出
 僅須提供token便可登出，登出後token會被儲存在database，下次使用會被拒絕
 
 Correct Response 成功登出
@@ -77,13 +77,13 @@ Correct Response 成功登出
 告訴用戶token已經被移除
 
 ## 方便測試用的API，之後會刪除
-## GET   /user
+### GET   /user
 可以得知創建的所有帳號內容
 
-## GET   /user/<user_id>
+### GET   /user/<user_id>
 可以得知創建的特定帳號的內容
 
-## DELETE   /user/<user_id>
+### DELETE   /user/<user_id>
 可以刪除創建的特定帳號的內容
 
 
