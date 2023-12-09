@@ -12,7 +12,7 @@ blp = Blueprint("pages", __name__, description= "Operations on pages")
 
 @blp.route("/page")
 class Pagelist(MethodView):
-    @jwt_required()
+    
     @blp.response(200, PageSchema(many = True))
     def get(self):
         return PageModel.query.all()
@@ -40,13 +40,13 @@ class Pagelist(MethodView):
     
 @blp.route("/page/<int:page_id>")
 class Page(MethodView):
-    @jwt_required() 
+    
     @blp.response(200, PageSchema)
     def get(self, page_id):
         item = PageModel.query.get_or_404(page_id)
         return item
     
-    @jwt_required()
+    
     @blp.response(202,
                   description="Deletes a page.",
                   example={"message": "Page deleted"}
@@ -85,7 +85,7 @@ class Page(MethodView):
     
     @blp.route("/book/<int:book_id>/page")
     class PageInBook(MethodView):
-        # @jwt_required()
+        @jwt_required()
         @blp.response(200, PageSchema(many=True)) # get book all page
         def get(self,book_id):
             # user_id= get_jwt_identity()

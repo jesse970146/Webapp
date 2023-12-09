@@ -295,7 +295,7 @@ Correct Response
 ```
 
 
-### GET   /bool/<book_id> 得知特定id書的內容
+### GET   /book/<book_id> 得知特定id書的內容
 **需要token**
 
 Correct Response   得到書的內容

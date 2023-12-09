@@ -56,7 +56,7 @@ class Book(MethodView):
         return Book
     
 
-    @jwt_required()
+    
     @blp.response(202,
                   description="Deletes a book if no pages are within it.",
                   example={"message": "Book deleted"}
