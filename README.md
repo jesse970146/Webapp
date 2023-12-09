@@ -86,6 +86,89 @@ Correct Response 成功登出
 ### DELETE   /user/<user_id>
 可以刪除創建的特定帳號的內容
 
+## 創建書本部分
+
+### POST   /user/book 創書本 
+**需要token**
+提供_book_name與tag，書名不可重複
+```json
+{
+	"book_name": "testing book1",
+	"tag": "anime"
+}
+```
+Correct Response 書本成功創建，會同時創建八個書頁
+```json
+{
+	"book_name": "testing book1",
+	"id": 8,
+	"pages": [
+		{
+			"id": "3",
+			"image_url": "imageurl1",
+			"page_number": 1,
+			"text": "This is page 1"
+		},
+		{
+			"id": "4",
+			"image_url": "imageurl2",
+			"page_number": 2,
+			"text": "This is page 2"
+		},
+		{
+			"id": "5",
+			"image_url": "imageurl3",
+			"page_number": 3,
+			"text": "This is page 3"
+		},
+		{
+			"id": "6",
+			"image_url": "imageurl4",
+			"page_number": 4,
+			"text": "This is page 4"
+		},
+		{
+			"id": "7",
+			"image_url": "imageurl5",
+			"page_number": 5,
+			"text": "This is page 5"
+		},
+		{
+			"id": "8",
+			"image_url": "imageurl6",
+			"page_number": 6,
+			"text": "This is page 6"
+		},
+		{
+			"id": "9",
+			"image_url": "imageurl7",
+			"page_number": 7,
+			"text": "This is page 7"
+		},
+		{
+			"id": "10",
+			"image_url": "imageurl8",
+			"page_number": 8,
+			"text": "This is page 8"
+		}
+	],
+	"tag": "anime",
+	"thumb": "0",
+	"user": {
+		"id": 1,
+		"username": "jesse1"
+	},
+	"user_id": 1
+}
+```
+Error Response 使用者名稱重複
+```json
+{
+	"code": 409,
+	"message": "A user with that username already exists.",
+	"status": "Conflict"
+}
+```
 
 
 
