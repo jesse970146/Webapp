@@ -67,16 +67,16 @@ class Book(MethodView):
                       )
     def delete(self, book_id):
         Book = BookModel.query.get_or_404(book_id)
-        user_id= get_jwt_identity()  
-        if Book.user_id != user_id:
-            abort(401,
-              message="Signature verification failed. Make sure the book is belong to the user."
-              )
+        # user_id= get_jwt_identity()  
+        # if Book.user_id != user_id:
+        #     abort(401,
+        #       message="Signature verification failed. Make sure the book is belong to the user."
+        #       )
 
-        if not Book.pages:
-            db.session.delete(Book)
-            db.session.commit()
-            return {"message": "Book deleted"}
+        # if not Book.pages:
+        db.session.delete(Book)
+        db.session.commit()
+        return {"message": "Book deleted"}
         abort(400,
               message="Could not delete book. Make sure the book is not associated with any pages, then try again"
               )
