@@ -78,18 +78,26 @@ Correct Response 成功登出
 
 ## 方便測試用的API，之後會刪除
 ### GET   /user
-可以得知創建的所有帳號內容
+可以得知所有帳號
 
 ### GET   /user/<user_id>
-可以得知創建的特定帳號的內容
+可以得知創建的特定帳號
 
 ### DELETE   /user/<user_id>
-可以刪除創建的特定帳號的內容
+可以刪除創建的特定帳號
+
+### GET   /book
+可以得知所有書
+
+### DELETE   /book/<book_id>
+可以刪除創建的特定書的內容
+
 
 ## 創建書本部分
 
 ### POST   /user/book 創書本 
 **需要token**
+
 提供_book_name與tag，書名不可重複
 ```json
 {
@@ -172,6 +180,7 @@ Error Response 書名重複
 
 
 ### GET   /user/book 得到使用者的所有書
+
 **需要token**
 
 Correct Response 
@@ -303,7 +312,141 @@ Correct Response
 ```
 
 
+### GET   /bool/<book_id> 得知創特定id書的內容
+**需要token**
 
+Correct Response 得到書的內容
+```json
+{
+	"book_name": "testing book1",
+	"id": 8,
+	"pages": [
+		{
+			"id": "4",
+			"image_url": "imageurl2",
+			"page_number": 2,
+			"text": "This is page 2"
+		},
+		{
+			"id": "5",
+			"image_url": "imageurl3",
+			"page_number": 3,
+			"text": "This is page 3"
+		},
+		{
+			"id": "6",
+			"image_url": "imageurl4",
+			"page_number": 4,
+			"text": "This is page 4"
+		},
+		{
+			"id": "7",
+			"image_url": "imageurl5",
+			"page_number": 5,
+			"text": "This is page 5"
+		},
+		{
+			"id": "8",
+			"image_url": "imageurl6",
+			"page_number": 6,
+			"text": "This is page 6"
+		},
+		{
+			"id": "9",
+			"image_url": "imageurl7",
+			"page_number": 7,
+			"text": "This is page 7"
+		},
+		{
+			"id": "10",
+			"image_url": "imageurl8",
+			"page_number": 8,
+			"text": "This is page 8"
+		},
+		{
+			"id": "3",
+			"image_url": "/image/1.png",
+			"page_number": 1,
+			"text": "A man walk with a dog "
+		}
+	],
+	"tag": "anime",
+	"thumb": "1",
+	"user": {
+		"id": 1,
+		"username": "jesse1"
+	},
+	"user_id": 1
+}
+```
+
+### POST   /thumb/<book_id> 按讚
+**需要token**
+
+Correct Response **thumb項的數字會增加**
+```json
+{
+	"book_name": "testing book1",
+	"id": 8,
+	"pages": [
+		{
+			"id": "4",
+			"image_url": "imageurl2",
+			"page_number": 2,
+			"text": "This is page 2"
+		},
+		{
+			"id": "5",
+			"image_url": "imageurl3",
+			"page_number": 3,
+			"text": "This is page 3"
+		},
+		{
+			"id": "6",
+			"image_url": "imageurl4",
+			"page_number": 4,
+			"text": "This is page 4"
+		},
+		{
+			"id": "7",
+			"image_url": "imageurl5",
+			"page_number": 5,
+			"text": "This is page 5"
+		},
+		{
+			"id": "8",
+			"image_url": "imageurl6",
+			"page_number": 6,
+			"text": "This is page 6"
+		},
+		{
+			"id": "9",
+			"image_url": "imageurl7",
+			"page_number": 7,
+			"text": "This is page 7"
+		},
+		{
+			"id": "10",
+			"image_url": "imageurl8",
+			"page_number": 8,
+			"text": "This is page 8"
+		},
+		{
+			"id": "3",
+			"image_url": "/image/1.png",
+			"page_number": 1,
+			"text": "A man walk with a dog "
+		}
+	],
+	"tag": "anime",
+	"thumb": "1",
+	"user": {
+		"id": 1,
+		"username": "jesse1"
+	},
+	"user_id": 1
+}
+```
 
 
 
