@@ -238,7 +238,67 @@ Correct Response
 		},
 		"user_id": 1
 	},
-    X N
+	{
+		"book_name": "testing book2",
+		"id": 11,
+		"pages": [
+			{
+				"id": "11",
+				"image_url": "imageurl1",
+				"page_number": 1,
+				"text": "This is page 1"
+			},
+			{
+				"id": "12",
+				"image_url": "imageurl2",
+				"page_number": 2,
+				"text": "This is page 2"
+			},
+			{
+				"id": "13",
+				"image_url": "imageurl3",
+				"page_number": 3,
+				"text": "This is page 3"
+			},
+			{
+				"id": "14",
+				"image_url": "imageurl4",
+				"page_number": 4,
+				"text": "This is page 4"
+			},
+			{
+				"id": "15",
+				"image_url": "imageurl5",
+				"page_number": 5,
+				"text": "This is page 5"
+			},
+			{
+				"id": "16",
+				"image_url": "imageurl6",
+				"page_number": 6,
+				"text": "This is page 6"
+			},
+			{
+				"id": "17",
+				"image_url": "imageurl7",
+				"page_number": 7,
+				"text": "This is page 7"
+			},
+			{
+				"id": "18",
+				"image_url": "imageurl8",
+				"page_number": 8,
+				"text": "This is page 8"
+			}
+		],
+		"tag": "anime",
+		"thumb": "0",
+		"user": {
+			"id": 1,
+			"username": "jesse1"
+		},
+		"user_id": 1
+	}
 ]
 ```
 
