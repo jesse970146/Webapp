@@ -296,7 +296,7 @@ Correct Response
 
 
 ### GET   /book/<book_id> 得知特定id書的內容
-**需要token**
+
 
 Correct Response   得到書的內容
 ```json
@@ -466,7 +466,7 @@ Correct response  頁面物件
 ```
 
 
-## 方便測試用的API，不需要token，之後會刪除
+## 其餘可能會用到的API或是方便測試的API，不需要token
 ### GET   /user
 可以得知所有帳號
 
