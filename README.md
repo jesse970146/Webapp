@@ -466,7 +466,7 @@ Correct response  頁面物件
 ```
 
 
-## 方便測試用的API，之後會刪除
+## 方便測試用的API，不需要token，之後會刪除
 ### GET   /user
 可以得知所有帳號
 
