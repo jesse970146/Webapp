@@ -40,13 +40,13 @@ API_URL :　https://web-app-backend-r3ac.onrender.com
 ### Correst Response 登入成功
 ```
 {
-	"access_token": _access_token_ ,
-	"refresh_token": _refresh_token_
+	"access_token": "token" ,
+	"refresh_token": "token"
 }
 ```
 
 ### Error Response 登入失敗
-```
+
 ```
 {
 	"code": 401,
@@ -54,5 +54,12 @@ API_URL :　https://web-app-backend-r3ac.onrender.com
 	"status": "Unauthorized"
 }
 ```
+
+## POST   /logout 登入
+### 提供於login取得的access token 放在Header中
+```
+Header內的內容是 Authorization: Bearer *access_token*
+```
+
 
 
