@@ -49,7 +49,7 @@ class BookInUser(MethodView):
     
 @blp.route("/book/<int:book_id>")
 class Book(MethodView):
-    @jwt_required()
+    
     @blp.response(200, BookSchema)
     def get(self, book_id): # get specific book
         Book = BookModel.query.get_or_404(book_id)

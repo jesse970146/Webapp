@@ -10,18 +10,8 @@ from models import UserModel, BlockListModel
 from schemas import UserSchema, BlockListSchema
 
 blp = Blueprint("users", __name__, description= "Operations on users")
-# dev only
-@blp.route("/user/<int:user_id>")
-class User(MethodView):
-    @blp.response(200, UserSchema)
-    def get(self, user_id):
-        user = UserModel.query.get_or_404(user_id)
-        return user
-    def delete(self, user_id):
-        user = UserModel.query.get_or_404(user_id)
-        db.session.delete(user)
-        db.session.commit()
-        return { "message": "User deleted."}, 200
+
+
 
 @blp.route("/register")
 class UserRegister(MethodView):
@@ -75,7 +65,8 @@ class UserLogout(MethodView):
     @blp.response(200, BlockListSchema(many = True))
     def get(self):
         return BlockListModel.query.all()
-
+    
+    
 # dev only
 @blp.route("/user/<int:user_id>")
 class User(MethodView):
