@@ -76,31 +76,6 @@ Correct Response   成功登出
 ```
 
 
-## 方便測試用的API，之後會刪除
-### GET   /user
-可以得知所有帳號
-
-### GET   /user/<user_id>
-可以得知創建的特定帳號
-
-### DELETE   /user/<user_id>
-可以刪除創建的特定帳號
-
-### GET   /book
-可以得知所有書
-
-### DELETE   /book/<book_id>
-可以刪除創建的特定書的內容
-
-### GET   /page
-可以得知所有頁面
-
-### GET   /page/<page_id>
-可以得知創建的特定頁面
-
-### DELETE   /page/<page_id>
-可以刪除創建的特定頁面
-
 ## 書本部分
 
 ### POST   /user/book 創書本 
@@ -489,3 +464,29 @@ Correct response  頁面物件
 	"user_id": 1
 }
 ```
+
+
+## 方便測試用的API，之後會刪除
+### GET   /user
+可以得知所有帳號
+
+### GET   /user/<user_id>
+可以得知創建的特定帳號
+
+### DELETE   /user/<user_id>
+可以刪除創建的特定帳號
+
+### GET   /book
+可以得知所有書
+
+### DELETE   /book/<book_id>
+可以刪除創建的特定書的內容
+
+### GET   /page
+可以得知所有頁面
+
+### GET   /page/<page_id>
+可以得知創建的特定頁面
+
+### DELETE   /page/<page_id>
+可以刪除創建的特定頁面
