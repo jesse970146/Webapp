@@ -13,13 +13,13 @@
 	"password": "testing"	
 }
 ```
-Correct Response 使用者成功創建
+Correct Response   使用者成功創建
 ```json
 {
 	"message": "User created successfully."
 }
 ```
-Error Response 使用者名稱重複
+Error Response   使用者名稱重複
 ```json
 {
 	"code": 409,
@@ -48,7 +48,7 @@ token的使用方式請參考 https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%
 }
 ```
 
-Error Response 登入失敗
+Error Response   登入失敗
 
 ```json
 {
@@ -61,7 +61,7 @@ Error Response 登入失敗
 ### POST   /logout 登出
 僅須提供token便可登出，登出後token會被儲存在database，下次使用會被拒絕
 
-Correct Response 成功登出
+Correct Response   成功登出
 ```json
 {
 	"message": " Sucessfully logout"
@@ -105,7 +105,7 @@ Correct Response 成功登出
 	"tag": "anime"
 }
 ```
-Correct Response 書本成功創建，會同時創建八個書頁
+Correct Response   書本成功創建，會同時創建八個書頁
 ```json
 {
 	"book_name": "testing book1",
@@ -169,7 +169,7 @@ Correct Response 書本成功創建，會同時創建八個書頁
 	"user_id": 1
 }
 ```
-Error Response 書名重複
+Error Response   書名重複
 ```json
 {
 	"code": 500,
@@ -312,10 +312,10 @@ Correct Response
 ```
 
 
-### GET   /bool/<book_id> 得知創特定id書的內容
+### GET   /bool/<book_id> 得知特定id書的內容
 **需要token**
 
-Correct Response 得到書的內容
+Correct Response   得到書的內容
 ```json
 {
 	"book_name": "testing book1",
@@ -383,7 +383,7 @@ Correct Response 得到書的內容
 ### POST   /thumb/<book_id> 按讚
 **需要token**
 
-Correct Response **thumb項的數字會增加**
+Correct Response   **thumb項的數字會增加**
 ```json
 {
 	"book_name": "testing book1",
