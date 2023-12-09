@@ -67,14 +67,14 @@ Correct Response 成功登出
 	"message": " Sucessfully logout"
 }
 ```
-若用戶已登出，使用相同token，會出現
+若用戶已登出，使用相同token，會告訴用戶token已經被移除
 ```json
 {
 	"descripition": "The token has been revoked",
 	"error": "token_revoked"
 }
 ```
-告訴用戶token已經被移除
+
 
 ## 方便測試用的API，之後會刪除
 ### GET   /user
@@ -161,13 +161,85 @@ Correct Response 書本成功創建，會同時創建八個書頁
 	"user_id": 1
 }
 ```
-Error Response 使用者名稱重複
+Error Response 書名重複
 ```json
 {
-	"code": 409,
-	"message": "A user with that username already exists.",
-	"status": "Conflict"
+	"code": 500,
+	"message": "(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint \"books_book_name_key\"\nDETAIL:  Key (book_name)=(testing book1) already exists.\n\n[SQL: INSERT INTO books (book_name, thumb, tag, user_id) VALUES (%(book_name)s, %(thumb)s, %(tag)s, %(user_id)s) RETURNING books.id]\n[parameters: {'book_name': 'testing book1', 'thumb': 0, 'tag': 'anime', 'user_id': 1}]\n(Background on this error at: https://sqlalche.me/e/20/gkpj)",
+	"status": "Internal Server Error"
 }
+```
+
+
+### GET   /user/book 得到使用者的所有書
+**需要token**
+
+Correct Response 
+```json
+[
+	{
+		"book_name": "testing book1",
+		"id": 8,
+		"pages": [
+			{
+				"id": "4",
+				"image_url": "imageurl2",
+				"page_number": 2,
+				"text": "This is page 2"
+			},
+			{
+				"id": "5",
+				"image_url": "imageurl3",
+				"page_number": 3,
+				"text": "This is page 3"
+			},
+			{
+				"id": "6",
+				"image_url": "imageurl4",
+				"page_number": 4,
+				"text": "This is page 4"
+			},
+			{
+				"id": "7",
+				"image_url": "imageurl5",
+				"page_number": 5,
+				"text": "This is page 5"
+			},
+			{
+				"id": "8",
+				"image_url": "imageurl6",
+				"page_number": 6,
+				"text": "This is page 6"
+			},
+			{
+				"id": "9",
+				"image_url": "imageurl7",
+				"page_number": 7,
+				"text": "This is page 7"
+			},
+			{
+				"id": "10",
+				"image_url": "imageurl8",
+				"page_number": 8,
+				"text": "This is page 8"
+			},
+			{
+				"id": "3",
+				"image_url": "/image/1.png",
+				"page_number": 1,
+				"text": "A man walk with a dog "
+			}
+		],
+		"tag": "anime",
+		"thumb": "1",
+		"user": {
+			"id": 1,
+			"username": "jesse1"
+		},
+		"user_id": 1
+	},
+    X N
+]
 ```
 
 
