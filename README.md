@@ -3,7 +3,7 @@
 
 ### API_URL :　https://web-app-backend-r3ac.onrender.com
 
-## 用戶登入部分
+## 用戶部分
 
 ### POST   /register 創帳號
 提供username與password
@@ -92,8 +92,16 @@ Correct Response   成功登出
 ### DELETE   /book/<book_id>
 可以刪除創建的特定書的內容
 
+### GET   /page
+可以得知所有頁面
 
-## 創建書本部分
+### GET   /page/<page_id>
+可以得知創建的特定頁面
+
+### DELETE   /page/<page_id>
+可以刪除創建的特定頁面
+
+## 書本部分
 
 ### POST   /user/book 創書本 
 **需要token**
@@ -448,5 +456,36 @@ Correct Response   **thumb項的數字會增加**
 }
 ```
 
+## 頁面部分
 
+### PUT   /page/<page_id> 更改特定頁面的內容
+***需要token**
+需要提供text以及image_url
 
+```json
+{
+	"text": "A man walk with a dog ",
+	"image_url" : "/image/1.png"
+}
+```
+Correct response  頁面物件
+```json
+{
+	"book": {
+		"book_name": "testing book1",
+		"id": 8,
+		"tag": "anime",
+		"thumb": "1"
+	},
+	"book_id": 8,
+	"id": "3",
+	"image_url": "/image/1.png",
+	"page_number": 1,
+	"text": "A man walk with a dog ",
+	"user": {
+		"id": 1,
+		"username": "jesse1"
+	},
+	"user_id": 1
+}
+```
