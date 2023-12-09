@@ -57,11 +57,11 @@ class Page(MethodView):
     #                   )
     def delete(self, page_id):
         Page = PageModel.query.get_or_404(page_id)
-        user_id= get_jwt_identity()  
-        if Page.user_id != user_id:
-            abort(401,
-              message="Signature verification failed. Make sure the book is belong to the user."
-              )
+        # user_id= get_jwt_identity()  
+        # if Page.user_id != user_id:
+        #     abort(401,
+        #       message="Signature verification failed. Make sure the book is belong to the user."
+        #       )
         db.session.delete(Page)
         db.session.commit()
         return {"message": "Page deleted"}

@@ -10,4 +10,4 @@ class BookModel(db.Model):
     user_id =db.Column(db.Integer, db.ForeignKey("users.id"), unique = False, nullable = False)
     user = db.relationship("UserModel", back_populates = "books" )
     
-    pages = db.relationship("PageModel", back_populates = "book")
+    pages = db.relationship("PageModel", back_populates = "book", lazy ="dynamic", cascade = "all, delete-orphan")
