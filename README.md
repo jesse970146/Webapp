@@ -40,8 +40,8 @@ API_URL :　https://web-app-backend-r3ac.onrender.com
 ### Correst Response 登入成功
 ```
 {
-	"access_token": "_access_token_" ,
-	"refresh_token": "_refresh_token_"
+	"access_token": _access_token_ ,
+	"refresh_token": _refresh_token_
 }
 ```
 
