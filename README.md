@@ -92,6 +92,7 @@ Correct Response   書本成功創建，會同時創建八個書頁
 ```json
 {
 	"book_name": "testing book1",
+	"create_time": "2023-12-13T20:24:30.910676",
 	"id": 8,
 	"pages": [
 		{
@@ -171,6 +172,7 @@ Correct Response
 [
 	{
 		"book_name": "testing book1",
+		"create_time": "2023-12-13T20:24:30.910676",
 		"id": 8,
 		"pages": [
 			{
@@ -232,6 +234,7 @@ Correct Response
 	},
 	{
 		"book_name": "testing book2",
+		"create_time": "2023-12-13T20:24:30.910676",
 		"id": 11,
 		"pages": [
 			{
@@ -302,6 +305,7 @@ Correct Response   得到書的內容
 ```json
 {
 	"book_name": "testing book1",
+	"create_time": "2023-12-13T20:24:30.910676",
 	"id": 8,
 	"pages": [
 		{
@@ -370,6 +374,7 @@ Correct Response   **thumb項的數字會增加**
 ```json
 {
 	"book_name": "testing book1",
+	"create_time": "2023-12-13T20:24:30.910676",
 	"id": 8,
 	"pages": [
 		{
@@ -448,6 +453,7 @@ Correct response  頁面物件
 {
 	"book": {
 		"book_name": "testing book1",
+		"create_time": "2023-12-13T20:24:30.910676",
 		"id": 8,
 		"tag": "anime",
 		"thumb": "1"
