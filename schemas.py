@@ -23,6 +23,7 @@ class PlainBookSchema(Schema):
     book_name = fields.Str(required = True)
     thumb = fields.Str(dump_only=True)
     tag = fields.Str(required = True)
+    create_time = fields.DateTime(dump_only=True)
 
 class PageUpdateSchema(Schema):
     text = fields.Str(required = True)
