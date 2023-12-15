@@ -436,6 +436,75 @@ Correct Response   **thumb項的數字會增加**
 }
 ```
 
+### POST   /cancelthumb/<book_id> 取消按讚
+**需要token**
+
+Correct Response   **thumb項的數字會減少**
+```json
+{
+	"book_name": "testing book1",
+	"create_time": "2023-12-13T20:24:30.910676",
+	"id": 8,
+	"pages": [
+		{
+			"id": "4",
+			"image_url": "imageurl2",
+			"page_number": 2,
+			"text": "This is page 2"
+		},
+		{
+			"id": "5",
+			"image_url": "imageurl3",
+			"page_number": 3,
+			"text": "This is page 3"
+		},
+		{
+			"id": "6",
+			"image_url": "imageurl4",
+			"page_number": 4,
+			"text": "This is page 4"
+		},
+		{
+			"id": "7",
+			"image_url": "imageurl5",
+			"page_number": 5,
+			"text": "This is page 5"
+		},
+		{
+			"id": "8",
+			"image_url": "imageurl6",
+			"page_number": 6,
+			"text": "This is page 6"
+		},
+		{
+			"id": "9",
+			"image_url": "imageurl7",
+			"page_number": 7,
+			"text": "This is page 7"
+		},
+		{
+			"id": "10",
+			"image_url": "imageurl8",
+			"page_number": 8,
+			"text": "This is page 8"
+		},
+		{
+			"id": "3",
+			"image_url": "/image/1.png",
+			"page_number": 1,
+			"text": "A man walk with a dog "
+		}
+	],
+	"tag": "anime",
+	"thumb": "1",
+	"user": {
+		"id": 1,
+		"username": "jesse1"
+	},
+	"user_id": 1
+}
+```
+
 ## 頁面部分
 
 ### PUT   /page/<page_id> 更改特定頁面的內容

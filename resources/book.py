@@ -93,3 +93,16 @@ class thumb(MethodView):
         db.session.add(Book)
         db.session.commit()
         return Book
+
+@blp.route("/cancelthumb/<book_id>")
+class cancelthumb(MethodView):
+    @jwt_required()
+    @blp.response(200, BookSchema)
+    def post(self,book_id):
+        Book = BookModel.query.get_or_404(book_id)
+        if Book:
+            Book.thumb -=1
+
+        db.session.add(Book)
+        db.session.commit()
+        return Book
