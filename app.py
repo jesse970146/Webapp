@@ -13,6 +13,7 @@ from flask_migrate import Migrate
 from db import db
 import models
 from models import BlockListModel
+import datetime
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -33,7 +34,9 @@ def create_app(db_url=None):
 
     api=  Api(app)
     app.config["JWT_SECRET_KEY"] = "260816861759538803540142184473204903862"
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = datetime.timedelta(minutes = 60)
     jwt = JWTManager(app)
+
     @jwt.token_in_blocklist_loader
     def check_if_token_in_blocklist(jwt_header, jwt_payload):
         if BlockListModel.query.filter(BlockListModel.expired == jwt_payload["jti"]).first():
