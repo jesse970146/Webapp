@@ -10,5 +10,5 @@ class BookModel(db.Model):
     tag = db.Column(db.String(80), nullable = False)
     user_id =db.Column(db.Integer, db.ForeignKey("users.id"), unique = False, nullable = False)
     user = db.relationship("UserModel", back_populates = "books" )
-    create_time = db.Column(db.DateTime, default=datetime.now(pytz.timezone("Asia/Taipei")), nullable=False)
+    create_time = db.Column(db.DateTime, default=datetime.now(pytz.timezone("America/New_York")), nullable=False)
     pages = db.relationship("PageModel", back_populates = "book", lazy ="dynamic", cascade = "all, delete-orphan")
