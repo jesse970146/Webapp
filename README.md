@@ -2,7 +2,7 @@
 
 ## 安裝必要安裝檔
 ```bash
-	pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## 資料庫
@@ -21,15 +21,14 @@
 
 	有使用flask migrate，若models資料夾內的檔案有做改變可以按順序打入下列指令
 	```bash
-		flask db init
-		flask db migrate
-		falsk db upgrade
+	flask db init
+	flask db migrate
+	falsk db upgrade
 	```
 4. 已寫好Dockerfile，之後要deploy可以進行使用及修改
-5. 
-	-models資料夾內為設定table的資料夾
-	-recources資料夾內為設定api的資料夾
-	-schema.py為控制api在接收與回傳中request的內容以及response的內容
+5. models資料夾內為設定table的資料夾
+6. recources資料夾內為設定api的資料夾
+7. schema.py為控制api在接收與回傳中request的內容以及response的內容
 
 
 
