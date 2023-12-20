@@ -10,7 +10,6 @@ from resources.page import blp as PageBlueprint
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 from db import db
-import models
 from models import BlockListModel
 import datetime
 
