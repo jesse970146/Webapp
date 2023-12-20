@@ -19,7 +19,7 @@
 **FLASK_DEBUG**參數可以改成1，這樣就可以一直開著後端，然後再改code的時候可以同步更新，不用一直重覆```flask run```
 3. 資料庫內Table修改
 
-	有使用flask migrate，若models資料夾內的有做改變可以按順序打入下列指令
+	有使用flask migrate，若models資料夾內的檔案有做改變可以按順序打入下列指令
 	```bash
 		flask db init
 		flask db migrate
