@@ -25,7 +25,12 @@
 		flask db migrate
 		falsk db upgrade
 	```
-4. 已寫好Dockerfile，之後要deploy可以再進行修改
+4. 已寫好Dockerfile，之後要deploy可以進行使用及修改
+5. 
+	-models資料夾內為設定table的資料夾
+	-recources資料夾內為設定api的資料夾
+	-schema.py為控制api在接收與回傳中request的內容以及response的內容
+
 
 
 
