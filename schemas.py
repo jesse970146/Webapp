@@ -3,13 +3,10 @@ from marshmallow import Schema, fields
 
 class PlainPageSchema(Schema):
     id = fields.Str(dump_only=True)
-    # tag = fields.Str(required = True)
-    # book_name = fields.Str(required = True)
     page_number = fields.Int(required = True)
     text = fields.Str(required = True)
     image_url = fields.Str(required = True)
 
-    # store_id = fields.Str(required = True) 
 
 class PlainUserSchema(Schema):
     id = fields.Int(dump_only=True)
