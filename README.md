@@ -36,7 +36,7 @@ pip install -r requirements.txt
 # API
 
 ### CODE_URL :　https://github.com/jesse970146/Webapp
-### API_URL(deployed on render.com will be closed soon) :　https://web-app-backend-r3ac.onrender.com
+
 
 ## 用戶部分
 
