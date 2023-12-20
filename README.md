@@ -1,4 +1,5 @@
 # How to use after git clone
+### CODE_URL :　https://github.com/jesse970146/Webapp
 
 ## 安裝必要安裝檔
 ```bash
@@ -34,9 +35,6 @@ pip install -r requirements.txt
 
 
 # API
-
-### CODE_URL :　https://github.com/jesse970146/Webapp
-
 
 ## 用戶部分
 
