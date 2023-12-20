@@ -9,7 +9,7 @@
 資料庫預設是SQLlite，如果要用其他資料庫像是MySQL或是PostgreSQL，需額外創建一.env檔，新增參數**DATABASE_URL**
 
 ## app.py 設定
-使用者的驗證使用JWT，需在.env檔內新增參數**JWT_SECRET_KEY**，使參數為一串，使參數為一串
+使用者的驗證使用JWT，需在.env檔內新增參數**JWT_SECRET_KEY**，參數為一串數字
 
 **設定完後應該就可使用 flask run 開啟後端**
 
