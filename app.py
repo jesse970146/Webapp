@@ -4,7 +4,6 @@ from flask_cors import CORS
 from flask import Flask,jsonify
 from flask_smorest import Api
 from dotenv import load_dotenv
-# from resources.item import blp as ItemBlueprint
 from resources.user import blp as UserBlueprint
 from resources.book import blp as BookBlueprint
 from resources.page import blp as PageBlueprint
